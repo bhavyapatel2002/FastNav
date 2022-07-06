@@ -23,3 +23,6 @@ This web application was developed to address the issue of finding gas stations 
 - Add ability for users to search for other types of establishments (parks, ice cream shops, etc.)
 - Add ability for users to modify distance from route that they are willing to drive
 - Text under modal in Search tab shows origin and destination in all lowercase letters, figure out why this happens
+
+## Images
+
