@@ -17,4 +17,9 @@ This web application was developed to address the issue of finding gas stations 
 - Ability to enter parameters for origin and destination through URL (this allows for sharing specific routes with friends through the use of a single URL)
 - Project deployed to PythonAnywhere server so that it can be accessed at any time from any location
 
+## To-Do
 
+- The web app currently has a limit on maximum route length to limit the number of API calls, this could be removed if this project had funding
+- Add ability for users to search for other types of establishments (parks, ice cream shops, etc.)
+- Add ability for users to modify distance from route that they are willing to drive
+- Text under modal in Search tab shows origin and destination in all lowercase letters, figure out why this happens
