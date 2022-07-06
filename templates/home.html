@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=INSERTKEYHERE"></script>
+        <script src="https://cdn.jsdelivr.net/gh/denissellu/routeboxer@master/src/RouteBoxer.js" type="text/javascript"></script>
+        <title>FastNav</title>
+        <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <style>
+            .modal { z-index: 1001 !important; } 
+            .modal-backdrop { z-index: 1000 !important; }
+            .pac-container { z-index: 100000 !important; }
+            .pac-icon { display: none; }
+
+            .pac-item {
+              padding: 8px;
+              padding-left: 14px;
+              padding-right: 14px;
+              cursor: pointer;
+            }
+
+            .text-responsive {
+                font-size: calc(100% + 3vw + 3vh);
+            }        
+
+            .text-responsive-small {
+                font-size: calc(10% + 1vw + 1vh);
+            }
+
+            .btn-responsive {
+                font-size: calc(10% + 1vw + 1vh);
+            }
+            
+            html,body {
+                height:100vh;  
+                max-width: 1500px;
+                margin: 0 auto;
+                padding-top: 00px;  
+            }
+            body{
+                background-image: linear-gradient(to right, rgba(255,255,255, 0.1) 0 100%), url("/static/background.png");
+                background-size: cover;
+              }
+            #map {
+                height: 400px;
+                width: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-lg bg-light mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">&nbsp;FastNav</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/search_route">Search</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <br>
+
+        <div class="container-fluid" style="width: 95%; height: calc(100% - 100px);">
+            <div class="row">
+                <h1 class="text-responsive">&nbsp;FastNav</h1>
+            </div>
+            <div class="row">
+                <h5 class="text-responsive-small">&nbsp;&nbsp;&nbsp;&nbsp;Find gas stations that are along your route.</h5>
+            </div>
+            <div class="row">
+                <p>&nbsp;</p>
+            </div>
+            <div class="row" style="width: 100%">
+                <div class="container-fluid" style="width: 97.5%; height: 100%">
+                    <button type="button" class="btn btn-outline-success btn-lg btn-responsive" data-bs-toggle="modal" data-bs-target="#exampleModalHome">Search Along your Route</button>    
+                </div>
+            </div>
+        </div>
+    
+        <div class="modal fade" id="exampleModalHome" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Search Along your Route</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group mb-3">
+                            <label class="mb-2" for="exampleInputEmail1">Origin:</label>
+                            <input type="text" class="form-control" id="from" placeholder="Enter origin">
+                        </div>
+                        <div class="form-group mb-2">
+                            <label class="mb-2" for="exampleInputPassword1">Destination:</label>
+                            <input type="text" class="form-control" id="to" placeholder="Enter destination">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <p class="pb-1"><small>Maximum route distance of 10 miles&nbsp;&nbsp;&nbsp;&nbsp;</small></p>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <input type="button" class="btn btn-success" value="Search Route" onclick="routeFromHome()" data-bs-dismiss="modal"> </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function routeFromHome(){	
+                var fromInput  = document.getElementById('from').value;
+                var toInput  = document.getElementById('to').value;
+                window.location.href = "/search_route?from=" + fromInput + "&to=" + toInput + "&submit=true";
+            }
+        </script>
+
+        <script>
+            var fromItem = document.getElementById('from');
+            new google.maps.places.Autocomplete(fromItem);
+            var toItem = document.getElementById('to');
+            new google.maps.places.Autocomplete(toItem);
+        </script>
+
+    </body>
+</html>
