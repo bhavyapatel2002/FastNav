@@ -26,3 +26,12 @@ This web application was developed to address the issue of finding gas stations 
 
 ## Images
 
+[Home Page](https://github.com/bhavyapatel2002/FastNav/blob/6bf44015c6af06b8575f1bd959e66a405f7c7b7f/static/screenshots/Home%20Page.png)
+
+[Search Page](https://github.com/bhavyapatel2002/FastNav/blob/6bf44015c6af06b8575f1bd959e66a405f7c7b7f/static/screenshots/Search%20Page.png)
+
+[Enter Route](https://github.com/bhavyapatel2002/FastNav/blob/6bf44015c6af06b8575f1bd959e66a405f7c7b7f/static/screenshots/Enter%20Route.png)
+
+[Show Results (includes URL to show parameters)](https://github.com/bhavyapatel2002/FastNav/blob/6bf44015c6af06b8575f1bd959e66a405f7c7b7f/static/screenshots/Show%20Results.png)
+
+[Info Popup](https://github.com/bhavyapatel2002/FastNav/blob/6bf44015c6af06b8575f1bd959e66a405f7c7b7f/static/screenshots/Info%20Popup.png)
