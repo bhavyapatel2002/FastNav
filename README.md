@@ -19,6 +19,7 @@ This web application was developed to address the issue of finding gas stations 
 
 ## To-Do
 
+- Look into how the application can pull up-to-date gas prices at each station from the web, maybe highlight the station along your route with the lowest price
 - The web app currently has a limit on maximum route length to limit the number of API calls, this could be removed if this project had funding
 - Add ability for users to search for other types of establishments (parks, ice cream shops, etc.)
 - Add ability for users to modify distance from route that they are willing to drive
